@@ -7,7 +7,7 @@ from finbert import MODEL_NAME, score_titles
 load_dotenv()
 DB = os.environ["DATABASE_URL"]
 
-def fetch_unscored(limit: int = 200):
+def fetch_unscored(limit: int = 500):
     with psycopg.connect(DB) as conn:
         with conn.cursor() as cur:
             cur.execute(
